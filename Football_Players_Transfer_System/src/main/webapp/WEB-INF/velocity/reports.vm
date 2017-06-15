@@ -1,0 +1,88 @@
+<head>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous">
+
+<style type="text/css">
+
+header {
+	background-color: #4E342E;
+	background-size: cover;
+	background-position: center;
+	height: 100px;
+	color: white;
+}
+
+h1 {
+	text-align: center;
+	font-family: "Georgia", Times, serif;
+}
+
+#menu {
+	background-color:#D7CCC8;
+	list-style-type: none;
+	text-align: left;
+}
+
+#menu:hover {
+	background-color: #BCAAA4;
+	border-bottom: 2px solid black;
+	color: white;
+}
+
+h2{
+	text-align:center;
+}
+
+</style>
+</head>
+
+<div class="container">
+
+<header><br/>
+<h1>Finance Report</h1>
+</header>
+
+<div id="menu">
+<span class="glyphicon glyphicon-home"><a href="/transfer/org/home">HOME</a>
+<br/>
+<br/>
+</div>
+
+#if(! $debits )
+ <h3>No Reports Found !</h3>      
+#elseif($debits.size()==0)
+  <h3>No Reports Found !</h3>       
+#else
+           <table class="table">
+                <tr>
+                    <th>Team Name</th>
+                    <th>Amount Due</th>
+                    <th>Premium to FIFA</th>                    
+                </tr>
+             #foreach($debit in $debits)
+                 <tr>
+		            <td> $debit.name</td>
+		            <td> $debit.debitAmount</td>
+		            #set ($fee='')
+		            #set ($a=7)
+		            #set ($b=100)
+		            #set ($fee=$a * $debit.debitAmount)
+		            #set ($fee = $fee / $b)
+		            <td> $fee</td>		            
+	            </tr>
+	        #end
+            </table>
+#end
+
+</div>

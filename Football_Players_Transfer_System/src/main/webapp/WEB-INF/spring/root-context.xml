@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<property name="maxUploadSize" value="5000000" />
+	</bean>
+	
+	<bean id="userValidator" class="com.fifa.validator.UserValidator"></bean>
+	<bean id="userDao" class="com.fifa.dao.UserDAO" ></bean>
+	
+	<bean id="teamValidator" class="com.fifa.validator.TeamValidator"></bean>
+	<bean id="teamDao" class="com.fifa.dao.TeamDAO" ></bean>
+		
+	<bean id="playerValidator" class="com.fifa.validator.PlayerValidator"></bean>
+	<bean id="playerDao" class="com.fifa.dao.PlayerDAO" ></bean>
+	
+	<bean id="bidDao" class="com.fifa.dao.BidDAO" ></bean>
+					
+</beans>
