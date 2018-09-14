@@ -1,0 +1,30 @@
+{
+    "contacts": [{
+            "id": "1",
+            "last_name": "Doe",
+            "first_name": "John",
+            "number": "5035107635",
+            "image": "http://2.gravatar.com/avatar/8b91904f96464928ad93807b5fa9a611",
+            "address": "360 Huntington",
+            "birthday": "01/01/1990"
+        },
+        {
+            "id": "2",
+            "last_name": "Ace",
+            "first_name": "Jane",
+            "number": "5035107635",
+            "image": "http://2.gravatar.com/avatar/8b91904f96464928ad93807b5fa9a611",
+            "address": "360 Huntington",
+            "birthday": "01/01/1990"
+        },
+        {
+            "id": "3",
+            "last_name": "Schumacher",
+            "first_name": "Michael",
+            "number": "5035107635",
+            "image": "http://2.gravatar.com/avatar/8b91904f96464928ad93807b5fa9a611",
+            "address": "360 Huntington",
+            "birthday": "01/01/1990"
+        }
+    ]
+}

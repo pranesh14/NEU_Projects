@@ -1,0 +1,29 @@
+{
+    "name": "section2-assignment5-neruppuda",
+    "version": "1.0.0",
+    "description": "Blog App",
+    "main": "app.js",
+    "scripts": {
+
+        "compile-sass": "node-sass sass/main.scss dist/main.css",
+        "start": "node app.js"
+
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/neu-mis-info6150-fall2017/extra-credit-assignment1-pranesh14.git"
+    },
+    "keywords": [
+        "Blog"
+    ],
+    "author": "Pranesh",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/neu-mis-info6150-fall2017/extra-credit-assignment1-pranesh14.git"
+    },
+    "homepage": "https://github.com/neu-mis-info6150-fall2017/extra-credit-assignment1-pranesh14.git#readme",
+    "dependencies": {
+        "connect": "^3.6.5",
+        "serve-static": "^1.13.1"
+    }
+}

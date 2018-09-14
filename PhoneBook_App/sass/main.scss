@@ -1,0 +1,208 @@
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC|Roboto);
+@import "variable.scss";
+@import "mixin.scss";
+@import "common.scss";
+body {
+    font-family: $font-text;
+    font-weight: $font-weight-200;
+    * {
+        -webkit-transition: all 300ms ease-out;
+        -moz-transition: all 300ms ease-out;
+        transition: all 300ms ease-out;
+    }
+    .button-3 {
+        text-align: center;
+        ul {
+            list-style: none;
+            padding-left: 0em;
+            margin: 0em;
+            li {
+                display: inline-block;
+                width: 200px;
+                max-width: 200px;
+                height: 1em;
+                padding-top: 1em;
+                padding-bottom: 1em;
+                margin-bottom: 1%;
+            }
+            .last {
+                clear: left;
+            }
+            .first {
+                clear: right;
+            }
+        }
+    }
+    .button {
+        padding-left: 400px;
+        margin-bottom: 20px;
+        #view {
+            display: block;
+            width: 115px;
+            height: 25px;
+            background: $view-bg;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: $font-weight-bold;
+            font-family: $font-text;
+            font-weight: $font-weight-200;
+            color: $color;
+        }
+    }
+    #numberDisplay {
+        background: $numDisplay-bg;
+        max-width: 610px;
+        margin: 0 auto;
+        input {
+            color: $input-color;
+            height: 2em;
+            text-align: center;
+            background: rgba(0, 0, 255, 0.1);
+            padding: .5em 0em;
+            margin-top: 1em;
+            margin-bottom: 1%;
+            font-size: 2em;
+            font-weight: 100;
+            width: 100%;
+            border: 0px;
+        }
+    }
+    #dialpad {
+        background: $dialpad-bg;
+        max-width: 610px;
+        margin: 0 auto;
+        .deactive {
+            opacity: .2;
+        }
+        li {
+            color: $color;
+            font-weight: $font-weight-bold;
+            background: #eee;
+            width: 100%;
+        }
+        li:hover {
+            background: #ccc;
+        }
+        .deactive li:hover {
+            background: #eee;
+        }
+    }
+    #actions {
+        max-width: 610px;
+        margin: 0 auto;
+        .btn {
+            color: $color;
+            width: 32.5%;
+            padding: 14px 0px 10px 0px;
+            font-family: $font-text;
+            font-size: $font-size-1em;
+        }
+        input {
+            color: $input-color;
+        }
+        .deactive {
+            opacity: .2;
+        }
+        .clear.ready:hover {
+            background: $clear-bg-hover;
+        }
+        .clear.ready {
+            background: $clear-bg;
+        }
+        .call.ready {
+            background: $call-bg;
+        }
+        .call.ready:hover {
+            background: $call-bg-hover;
+        }
+        li.deactive:hover {
+            background: #eee;
+        }
+        li {
+            color: $color;
+            background: #efefef;
+            opacity: .8;
+        }
+        li.call.active {
+            background: $call-bg;
+        }
+        li.hangup {
+            background: rgba(255, 125, 0, 0.2);
+        }
+        li.hangup:hover {
+            background: rgba(255, 125, 0, 0.4);
+        }
+        li:hover {
+            background: #ccc;
+        }
+    }
+    .heading {
+        color: $color;
+        font-size: $font-size-2em;
+        width: 400px;
+        margin-left: 500px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        i {
+            padding-right: 10px;
+        }
+    }
+    .list {
+        color: $color;
+        font-size: $other-font-size;
+        background: #dddddd;
+        width: 400px;
+        margin-left: 500px;
+        padding: 10px 0px 15px 0px;
+        #viewdetail {
+            display: block;
+            background: lightgray;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: $font-weight-bold;
+            font-family: $font-text;
+            font-weight: $font-weight-200;
+            color: $color;
+        }
+    }
+    .details {
+        margin-top: 30px;
+        color: $color;
+        #detail {
+            margin: 10px 0px 10px 0px;
+        }
+    }
+    #back {
+        margin-top: 30px;
+        margin-left: 690px;
+        color: $color;
+        font-size: $font-size-2em;
+    }
+    .btn_a {
+        width: 400px;
+        margin-left: 500px;
+        padding: 50px 0px 10px 0px;
+        #adb {
+            color: $color;
+            font-family: $font-text;
+            font-size: $other-font-size;
+        }
+    }
+    #fielda {
+        margin-left: 8px;
+    }
+    #fieldd {
+        margin-left: 2px;
+    }
+    #ado {
+        margin-left: 50px;
+    }
+    #ada {
+        margin-left: 25px;
+    }
+    .ad {
+        color: $addCont-color;
+    }
+}

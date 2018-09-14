@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <title>Phonebook</title>
+    <link rel="stylesheet" href="dist/main.css">
+    <script src="/js/retrieve.js"></script>
+    <script src="https://use.fontawesome.com/9620787a1c.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+</head>
+
+<body onload="getNum()">
+    <form method="get" action="listcontacts.html">
+        <div class="heading" align="center">Add New Contact</div>
+        <div class="list" align="center"><span>First Name:</span> <input class="ad" type="text" name="first" /></div>
+        <div class="list" align="center"><span>Last Name:</span> <input class="ad" type="text" name="last" /></div>
+        <div class="list" align="center"><span id="fieldd">DOB:</span> <input class="ad" id="ado" type="text" name="dob" /></div>
+        <div class="list" align="center"><span id="fielda">Address:</span> <input class="ad" id="ada" type="text" name="address" /></div>
+        <div class="btn_a" align="center"><input id="adb" type="submit" value="Add Contact"></div>
+        <input type="hidden" id="num" name="number">
+        <a href="index.html"><i id="back" class="fa fa-arrow-circle-left" aria-hidden="true"></i></a>
+    </form>
+</body>
+
+</html>
