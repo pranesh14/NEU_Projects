@@ -1,0 +1,897 @@
+
+/*CREATE TABLE User_Details
+(
+ UserID Number(10)  NOT NULL,
+ FirstName Char(40) NULL,
+ LastName Char(50) NULL,
+ Email Char(50) NULL,
+ PhoneNumber Char(12) NULL,
+ DateOfBirth Date NULL
+);
+
+ALTER TABLE User_Details ADD CONSTRAINT PK_UserID PRIMARY KEY (UserID)
+*/
+
+
+-- Table User_Review
+/*
+CREATE TABLE User_Review(
+  UserReviewID Integer NOT NULL,
+  UserID Integer NOT NULL,
+  Review Char(500 ),
+  ReviewedDate Timestamp(9),
+  MovieID Integer NOT NULL
+)
+/
+
+-- Add keys for table User_Review
+
+ALTER TABLE User_Review ADD CONSTRAINT PK_UserReviewID PRIMARY KEY (UserReviewID)
+*/
+
+
+-- Table Address
+/*
+CREATE TABLE Address(
+  AddressID Integer NOT NULL,
+  AddressLine Char(100 ),
+  City Char(30 ),
+  StateID Integer NOT NULL,
+  CountryID Integer NOT NULL,
+  PostalCode Char(6 )
+)
+/
+
+-- Add keys for table Address
+
+ALTER TABLE Address ADD CONSTRAINT PK_AddressID PRIMARY KEY (AddressID)
+*/
+
+
+-- Table Amazon_Videos
+/*
+CREATE TABLE Amazon_Videos(
+  AmazonVideoID Integer NOT NULL,
+  URL Char(30 ),
+  EntityID Integer NOT NULL,
+  EntityTypeID Integer NOT NULL,
+  Views Integer,
+  DateAdded Date
+)
+/
+
+-- Add keys for table Amazon_Videos
+
+ALTER TABLE Amazon_Videos ADD CONSTRAINT PK_AmazonVideoID PRIMARY KEY (AmazonVideoID)
+*/
+
+
+-- Table Aspect_Ratio
+/*
+CREATE TABLE Aspect_Ratio(
+  AspectRatioID Integer NOT NULL,
+  AspectRatio NVarchar2(15)
+)
+/
+
+-- Add keys for table Aspect_Ratio
+
+ALTER TABLE Aspect_Ratio ADD CONSTRAINT PK_AspectRatioID PRIMARY KEY (AspectRatioID)
+*/
+
+
+-- Table Award_Category
+/*
+CREATE TABLE Award_Category(
+  CategoryID Integer NOT NULL,
+  CategoryName Varchar2(150 )
+)
+/
+
+-- Add keys for table Award_Category
+
+ALTER TABLE Award_Category ADD CONSTRAINT PK_CategoryID PRIMARY KEY (CategoryID)
+/
+*/
+
+-- Table Awards_Cnfg
+/*
+CREATE TABLE Awards_Cnfg(
+  AwardID Integer NOT NULL,
+  AwardName Varchar2(100 )
+)
+/
+
+-- Add keys for table Awards_Cnfg
+
+ALTER TABLE Awards_Cnfg ADD CONSTRAINT PK_AwardID PRIMARY KEY (AwardID)
+*/
+
+
+-- Table Blue_Ray_DVD
+/*
+CREATE TABLE Blue_Ray_DVD(
+  BlueRayDvdID Integer NOT NULL,
+  EntityID Integer NOT NULL,
+  EntityTypeID Integer NOT NULL
+)
+/
+
+-- Add keys for table Blue_Ray_DVD
+
+ALTER TABLE Blue_Ray_DVD ADD CONSTRAINT BlueRayDvdID PRIMARY KEY (BlueRayDvdID)
+*/
+
+
+-- Table Celebrity
+/*
+CREATE TABLE Celebrity(
+  CelebrityID Integer NOT NULL,
+  CelebrityName NVarchar2(15),
+  CelebrityDOB Date,
+  Country NVarchar2(15),
+  Description NVarchar2(30),
+  AlternateName NVarchar2(15),
+  PersonalQuote NVarchar2(20),
+  StarSign NVarchar2(10),
+  Height NVarchar2(5),
+  Views Integer,
+  CelebrityTypeID Integer NOT NULL
+)
+/
+
+-- Add keys for table Celebrity
+
+ALTER TABLE Celebrity ADD CONSTRAINT PK_CelebrityID PRIMARY KEY (CelebrityID)
+*/
+
+
+-- Table Celebrity_Type
+/*
+CREATE TABLE Celebrity_Type(
+  CelebrityTypeID Integer NOT NULL,
+  CelebrityTypeName NVarchar2(1)
+)
+/
+
+-- Add keys for table Celebrity_Type
+
+ALTER TABLE Celebrity_Type ADD CONSTRAINT PK_CelebrityTypeID PRIMARY KEY (CelebrityTypeID)
+*/
+
+
+-- Table Channel_TV_Show_Time_Slot
+/*
+CREATE TABLE Channel_TV_Show_Time_Slot(
+  ChannelID Integer NOT NULL,
+  TimeSlotID Integer NOT NULL,
+  Date Date,
+  ShowID Integer NOT NULL  
+)
+/
+
+-- Add keys for table Channel_TV_Show_Time_Slot
+
+ALTER TABLE Channel_TV_Show_Time_Slot ADD CONSTRAINT PK_ChannelID_TimeSlotID_ShowID PRIMARY KEY (ChannelID,TimeSlotID,ShowID)
+*/
+
+
+-- Table Channels
+/*
+CREATE TABLE Channels(
+  ChannelID Integer NOT NULL,
+  ChannelName Varchar2(150 ),
+  Description Varchar2(500 )
+)
+/
+
+-- Add keys for table Channels
+
+ALTER TABLE Channels ADD CONSTRAINT Key12 PRIMARY KEY (ChannelID)
+*/
+
+
+-- Table Color
+/*
+CREATE TABLE Color(
+  ColorID Integer NOT NULL,
+  ColorName NVarchar2(15)
+)
+/
+
+-- Add keys for table Color
+
+ALTER TABLE Color ADD CONSTRAINT PK_ColorID PRIMARY KEY (ColorID)
+*/
+
+
+-- Table Country_Cnfg
+/*
+CREATE TABLE Country_Cnfg(
+  CountryID Integer NOT NULL,
+  Name Char(30 )
+)
+/
+
+-- Add keys for table Country_Cnfg
+
+ALTER TABLE Country_Cnfg ADD CONSTRAINT PK_CountryID PRIMARY KEY (CountryID)
+*/
+
+
+-- Table EntityType_Cnfg
+/*
+CREATE TABLE EntityType_Cnfg(
+  EntityTypeID Integer NOT NULL,
+  EntityType Char(20 )
+)
+/
+
+-- Add keys for table EntityType_Cnfg
+
+ALTER TABLE EntityType_Cnfg ADD CONSTRAINT PK_EntityTypeID PRIMARY KEY (EntityTypeID)
+*/
+
+
+-- Table Genre_Cnfg
+/*
+CREATE TABLE Genre_Cnfg(
+  GenreID Integer NOT NULL,
+  Name Char(20 )
+)
+/
+
+-- Add keys for table Genre_Cnfg
+
+ALTER TABLE Genre_Cnfg ADD CONSTRAINT Key18 PRIMARY KEY (GenreID)
+*/
+
+
+-- Table Goofs
+/*
+CREATE TABLE Goofs(
+  GoofsID Integer NOT NULL,
+  EntityID Integer NOT NULL,
+  EntityTypeID Integer NOT NULL,
+  Goof Char(200 )
+)
+/
+
+-- Add keys for table Goofs
+
+ALTER TABLE Goofs ADD CONSTRAINT PK_GoofsID PRIMARY KEY (GoofsID)
+*/
+
+
+-- Table Images
+/*
+CREATE TABLE Images(
+  ImageID Integer NOT NULL,
+  EntityID Integer NOT NULL,
+  EntityTypeID Integer NOT NULL,
+  ImageBlob Long raw
+)
+/
+
+-- Add keys for table Images
+
+ALTER TABLE Images ADD CONSTRAINT PK_ImageID PRIMARY KEY (ImageID)
+*/
+
+
+-- Table Movie
+/*
+CREATE TABLE Movie(
+  MovieID Integer NOT NULL,
+  MovieName NVarchar2(20),
+  MovieDescription NVarchar2(100),
+  MetacriticReview Float,
+  StoryLine NVarchar2(50),
+  Language Char(10 ),
+  Budget Number(15,2),
+  ReleaseDate Date,
+  CountryID Integer NOT NULL,
+  RunTime Integer,
+  AspectRatioID Integer NOT NULL,
+  ColorID Integer NOT NULL,
+  ProductionCompanyID Integer NOT NULL,
+  Views Integer,
+  GrossRevenue Number(15,2),
+  MovieRatingID Integer NOT NULL,
+  GenreID Integer NOT NULL
+)
+/
+
+-- Add keys for table Movie
+
+ALTER TABLE Movie ADD CONSTRAINT PK_MovieID PRIMARY KEY (MovieID)
+*/
+
+  
+-- Table Movie_Celebrity
+/*
+CREATE TABLE Movie_Celebrity(
+  MovieID Integer NOT NULL,
+  CelebrityID Integer NOT NULL
+)
+/
+
+-- Add keys for table Movie_Celebrity
+
+ALTER TABLE Movie_Celebrity ADD CONSTRAINT PK_MovieID_CelebrityID PRIMARY KEY (MovieID,CelebrityID)
+*/
+
+
+-- Table Movie_Rating
+/*
+CREATE TABLE Movie_Rating(
+  MovieRatingID Integer NOT NULL,
+  MovieRatingName NVarchar2(5)
+)
+/
+
+-- Add keys for table Movie_Rating
+
+ALTER TABLE Movie_Rating ADD CONSTRAINT PK_Movie_Rating PRIMARY KEY (MovieRatingID)
+*/
+
+
+-- Table News
+/*
+CREATE TABLE News(
+  NewsID Integer NOT NULL,
+  News Char(500 ),
+  EntityID Integer NOT NULL,
+  EntityTypeID Integer NOT NULL,
+  Views Integer,
+  Headlines Char(50 )
+)
+/
+
+-- Add keys for table News
+
+ALTER TABLE News ADD CONSTRAINT PK_NewsID PRIMARY KEY (NewsID)
+*/
+
+
+-- Table Nominee
+/*
+CREATE TABLE Nominee(
+  NomineeID Integer NOT NULL,
+  AwardID Integer NOT NULL,
+  CategoryID Integer NOT NULL,
+  EntityID Integer NOT NULL,
+  EntityTypeID Integer NOT NULL,
+  Year Integer
+)
+/
+
+-- Add keys for table Nominee
+
+ALTER TABLE Nominee ADD CONSTRAINT PK_NomineeID PRIMARY KEY (NomineeID)
+*/
+
+
+-- Table Phone
+/*
+CREATE TABLE Phone(
+  PhoneID Integer NOT NULL,
+  Number Char(12 )
+)
+/
+
+-- Add keys for table Phone
+
+ALTER TABLE Phone ADD CONSTRAINT PK_PhoneID PRIMARY KEY (PhoneID)
+*/
+
+
+-- Table Poll
+/*
+CREATE TABLE Poll(
+  PollID Integer NOT NULL,
+  OptionA Varchar2(150 ),
+  OptionB Varchar2(150 ),
+  CountA Integer,
+  CountB Integer,
+  Question Varchar2(300 )
+)
+/
+
+-- Add keys for table Poll
+
+ALTER TABLE Poll ADD CONSTRAINT PK_PollID PRIMARY KEY (PollID)
+*/
+
+
+-- Table Production_Company
+/*
+CREATE TABLE Production_Company(
+  ProductionCompanyID Integer NOT NULL,
+  ProductionCompanyName Varchar2(150 ),
+  AddressID Integer NOT NULL
+)
+/
+
+-- Add keys for table Production_Company
+
+ALTER TABLE Production_Company ADD CONSTRAINT PK_ProductionCompanyID PRIMARY KEY (ProductionCompanyID)
+*/
+
+
+
+-- Table Recently_Viewed
+/*
+CREATE TABLE Recently_Viewed(
+  RecentlyViewedID Integer NOT NULL,
+  EntityID Integer NOT NULL,
+  EntityTypeID Integer NOT NULL
+)
+/
+
+-- Add keys for table Recently_Viewed
+
+ALTER TABLE Recently_Viewed ADD CONSTRAINT PK_RecentlyViewdID PRIMARY KEY (RecentlyViewedID)
+*/
+
+
+-- Table Season_Episodes
+/*
+CREATE TABLE Season_Episodes(
+  SeasonID Integer NOT NULL,
+  EpisodeID Integer NOT NULL,
+  ReleaseDate Date,
+  ShowID Integer NOT NULL
+)
+/
+
+-- Add keys for table Season_Episodes
+
+ALTER TABLE Season_Episodes ADD CONSTRAINT PK_SeasonID_EpisodeID PRIMARY KEY (SeasonID,EpisodeID,ShowID)
+*/
+
+
+-- Table Show_Cnfg
+/*
+CREATE TABLE Show_Cnfg(
+  ShowTypeID Integer NOT NULL,
+  Name Char(10 )
+)
+/
+
+-- Add keys for table Show_Cnfg
+
+ALTER TABLE Show_Cnfg ADD CONSTRAINT PK_ShowTypeID PRIMARY KEY (ShowTypeID)
+*/
+
+
+-- Table Showtimes
+/*
+CREATE TABLE Showtimes(
+  ShowtimesID Integer NOT NULL,
+  Timeslot Char(10 ),
+  ShowTypeID Integer NOT NULL
+)
+/
+
+-- Add keys for table Showtimes
+
+ALTER TABLE Showtimes ADD CONSTRAINT PK_ShowtimesID PRIMARY KEY (ShowtimesID)
+*/
+
+
+-- Table Soundtracks
+/*
+CREATE TABLE Soundtracks(
+  SoundtrackID Integer NOT NULL,
+  EntityID Integer,
+  EntityTypeID Integer NOT NULL,
+  Name Char(20 ),
+  Playtime Char(10 ),
+  MusicDirectorID Integer NOT NULL,
+  SingerID Integer NOT NULL
+)
+/
+
+-- Add keys for table Soundtracks
+
+ALTER TABLE Soundtracks ADD CONSTRAINT PK_Soundtrack PRIMARY KEY (SoundtrackID)
+*/
+
+
+-- Table State_Cnfg
+/*
+CREATE TABLE State_Cnfg(
+  StateID Integer NOT NULL,
+  Name Char(30 )
+)
+/
+
+-- Add keys for table State_Cnfg
+
+ALTER TABLE State_Cnfg ADD CONSTRAINT PK_StateID PRIMARY KEY (StateID)
+*/
+
+
+-- Table Theatre
+/*
+CREATE TABLE Theatre(
+  TheatreID Integer NOT NULL,
+  AddressID Integer NOT NULL,
+  Name Char(50 ),
+  PhoneID Integer NOT NULL
+)
+/
+
+-- Add keys for table Theatre
+
+ALTER TABLE Theatre ADD CONSTRAINT PK_TheatreID PRIMARY KEY (TheatreID)
+*/
+
+
+-- Table Theatre_Movie_Showtime
+/*
+CREATE TABLE Theatre_Movie_Showtime(
+  ShowtimesID Integer NOT NULL,
+  TheatreID Integer NOT NULL,
+  MovieID Integer NOT NULL
+)
+/
+
+-- Add keys for table Theatre_Movie_Showtime
+
+ALTER TABLE Theatre_Movie_Showtime ADD CONSTRAINT PK_TheatreID_MovieID PRIMARY KEY (ShowtimesID,TheatreID,MovieID)
+*/
+
+
+-- Table TimeSlot
+/*
+CREATE TABLE TimeSlot(
+  TimeSlotID Integer NOT NULL,
+  Slot Varchar2(150 )
+)
+/
+
+-- Add keys for table TimeSlot
+
+ALTER TABLE TimeSlot ADD CONSTRAINT PK_TimeSlotID PRIMARY KEY (TimeSlotID)
+*/
+
+
+-- Table Trivias
+/*
+CREATE TABLE Trivias(
+  TriviasID Integer NOT NULL,
+  EntityID Integer NOT NULL,
+  EntityTypeID Integer NOT NULL,
+  Trivia Char(200 )
+)
+/
+
+-- Add keys for table Trivias
+
+ALTER TABLE Trivias ADD CONSTRAINT PK_TriviasID PRIMARY KEY (TriviasID)
+*/
+
+
+-- Table TV_Shows
+/*
+CREATE TABLE TV_Shows(
+  ShowID Integer NOT NULL,
+  Name Char(30 ),
+  Description Char(100 ),
+  ProductionCompanyID Integer NOT NULL,
+  Runtime Char(5 ),
+  SoundMix Char(20 ),
+  ColorID Integer NOT NULL,
+  AspectRatioID Integer NOT NULL,
+  Views Integer,
+  CountryID Integer NOT NULL,
+  Language Char(15 ),
+  CertificateID Integer NOT NULL
+)
+/
+
+-- Add keys for table TV_Shows
+
+ALTER TABLE TV_Shows ADD CONSTRAINT PK_ShowID PRIMARY KEY (ShowID)
+*/
+
+
+-- Table TVShow_Celebrity
+/*
+CREATE TABLE TVShow_Celebrity(
+  ShowID Integer NOT NULL,
+  CelebrityID Integer NOT NULL
+)
+/
+
+-- Add keys for table TVShow_Celebrity
+
+ALTER TABLE TVShow_Celebrity ADD CONSTRAINT PK_ShowID_CelebrityID PRIMARY KEY (ShowID,CelebrityID)
+*/
+
+
+-- Table TVShows_Certification_Cnfg
+/*
+CREATE TABLE TVShows_Certification_Cnfg(
+  CertificateID Integer NOT NULL,
+  Name Char(10 )
+)
+/
+
+-- Add keys for table TVShows_Certification_Cnfg
+
+ALTER TABLE TVShows_Certification_Cnfg ADD CONSTRAINT PK_TVShows_Certification_Cnfg PRIMARY KEY (CertificateID)
+*/
+
+
+-- Table Video_Type
+/*
+CREATE TABLE Video_Type(
+  VideoTypeID Integer NOT NULL,
+  VideoName NVarchar2(10)
+)
+/
+
+-- Add keys for table Video_Type
+
+ALTER TABLE Video_Type ADD CONSTRAINT PK_VideoTypeID PRIMARY KEY (VideoTypeID)
+*/
+
+
+-- Table Videos
+/*
+CREATE TABLE Videos(
+  VideosID Integer NOT NULL,
+  EntityID Integer NOT NULL,
+  EntityTypeID Integer NOT NULL,
+  URL NVarchar2(30),
+  VideoTypeID Integer NOT NULL
+)
+/
+
+-- Add keys for table Videos
+
+ALTER TABLE Videos ADD CONSTRAINT PK_VideosID PRIMARY KEY (VideosID)
+*/
+
+
+-- Table Week_Gross
+/*
+CREATE TABLE Week_Gross(
+  WeekGrossID Integer NOT NULL,
+  WeekNumber Integer,
+  Collection Number(15,2),
+  MovieID Integer NOT NULL
+)
+/
+
+-- Add keys for table Week_Gross
+
+ALTER TABLE Week_Gross ADD CONSTRAINT PK_WeekGrossID PRIMARY KEY (WeekGrossID)
+*/
+
+
+-- Table Winners
+/*
+CREATE TABLE Winners(
+  WinnerID Integer NOT NULL,
+  AwardID Integer NOT NULL,
+  CategoryID Integer NOT NULL,
+  EntityID Integer NOT NULL,
+  EntityTypeID Integer NOT NULL,
+  Year Integer
+)
+/
+
+-- Add keys for table Winners
+
+ALTER TABLE Winners ADD CONSTRAINT PK_WinnerID PRIMARY KEY (WinnerID)
+*/
+
+
+
+
+--ALTER TABLE Theatre ADD CONSTRAINT FK_AddressID_Address FOREIGN KEY (AddressID) REFERENCES Address (AddressID)
+/
+
+
+--ALTER TABLE Production_Company ADD CONSTRAINT FK_Address_ProductionCompany FOREIGN KEY (AddressID) REFERENCES Address (AddressID)
+/
+
+
+--ALTER TABLE TV_Shows ADD CONSTRAINT FK_Aspect_Ratio_TVSHows FOREIGN KEY (AspectRatioID) REFERENCES Aspect_Ratio (AspectRatioID)
+/
+
+
+--ALTER TABLE Movie ADD CONSTRAINT FK_AspectRatioID_AspectRatio FOREIGN KEY (AspectRatioID) REFERENCES Aspect_Ratio (AspectRatioID)
+/
+
+
+--ALTER TABLE Nominee ADD CONSTRAINT FK_AwardID_AwardsCnfg_Nominee FOREIGN KEY (AwardID) REFERENCES Awards_Cnfg (AwardID)
+/
+
+
+--ALTER TABLE Winners ADD CONSTRAINT FK_AwardID_AwardsCnfg43 FOREIGN KEY (AwardID) REFERENCES Awards_Cnfg (AwardID)
+/
+
+
+--ALTER TABLE Winners ADD CONSTRAINT FK_CategoryID_AwardCategory44 FOREIGN KEY (CategoryID) REFERENCES Award_Category (CategoryID)
+/
+
+
+--ALTER TABLE Nominee ADD CONSTRAINT FK_CategoryID_AwardCategory45 FOREIGN KEY (CategoryID) REFERENCES Award_Category (CategoryID)
+/
+
+
+--ALTER TABLE TVShow_Celebrity ADD CONSTRAINT FK_CelebrityID_Celebrity FOREIGN KEY (CelebrityID) REFERENCES Celebrity (CelebrityID)
+/
+
+
+--ALTER TABLE Movie_Celebrity ADD CONSTRAINT FK_CelebrityID_Celebrity1 FOREIGN KEY (CelebrityID) REFERENCES Celebrity (CelebrityID)
+/
+
+
+--ALTER TABLE Celebrity ADD CONSTRAINT FK_Celebrity_CelebrityType FOREIGN KEY (CelebrityTypeID) REFERENCES Celebrity_Type (CelebrityTypeID)
+/
+
+
+--ALTER TABLE TV_Shows ADD CONSTRAINT FK_TVSHows_Certification_Cnfg FOREIGN KEY (CertificateID) REFERENCES TVShows_Certification_Cnfg (CertificateID)
+/
+
+
+--ALTER TABLE Channel_TV_Show_Time_Slot ADD CONSTRAINT FK_ChannelID_Channels FOREIGN KEY (ChannelID) REFERENCES Channels (ChannelID)
+/
+
+
+--ALTER TABLE Movie ADD CONSTRAINT FK_ColorID_Color FOREIGN KEY (ColorID) REFERENCES Color (ColorID)
+/
+
+
+--ALTER TABLE TV_Shows ADD CONSTRAINT FK_ColorID_Color_TVShow FOREIGN KEY (ColorID) REFERENCES Color (ColorID)
+/
+
+
+--ALTER TABLE Address ADD CONSTRAINT FK_CountryID_Country_Cnfg FOREIGN KEY (CountryID) REFERENCES Country_Cnfg (CountryID)
+/
+
+
+--ALTER TABLE Movie ADD CONSTRAINT FK_Country_Cnfg_Movie FOREIGN KEY (CountryID) REFERENCES Country_Cnfg (CountryID)
+/
+
+
+--ALTER TABLE TV_Shows ADD CONSTRAINT FK_Country_Cnfg_TVShow FOREIGN KEY (CountryID) REFERENCES Country_Cnfg (CountryID)
+/
+
+
+--ALTER TABLE Soundtracks ADD CONSTRAINT FK_EntityTypeID_SoundTracks FOREIGN KEY (EntityTypeID) REFERENCES EntityType_Cnfg (EntityTypeID)
+/
+
+
+--ALTER TABLE Videos ADD CONSTRAINT FK_EntityTypeID_Videos FOREIGN KEY (EntityTypeID) REFERENCES EntityType_Cnfg (EntityTypeID)
+/
+
+
+--ALTER TABLE Nominee ADD CONSTRAINT FK_EntityTypeID_Nominee FOREIGN KEY (EntityTypeID) REFERENCES EntityType_Cnfg (EntityTypeID)
+/
+
+
+--ALTER TABLE Amazon_Videos ADD CONSTRAINT FK_EntityTypeID_AmazonVideos FOREIGN KEY (EntityTypeID) REFERENCES EntityType_Cnfg (EntityTypeID)
+/
+
+
+--ALTER TABLE Winners ADD CONSTRAINT FK_EntityTypeID_Winners FOREIGN KEY (EntityTypeID) REFERENCES EntityType_Cnfg (EntityTypeID)
+/
+
+
+--ALTER TABLE Goofs ADD CONSTRAINT FK_EntityTypeID_Goofs FOREIGN KEY (EntityTypeID) REFERENCES EntityType_Cnfg (EntityTypeID)
+/
+
+
+--ALTER TABLE News ADD CONSTRAINT FK_EntityTypeID_News FOREIGN KEY (EntityTypeID) REFERENCES EntityType_Cnfg (EntityTypeID)
+/
+
+
+--ALTER TABLE Trivias ADD CONSTRAINT FK_EntityTypeID_Trivias FOREIGN KEY (EntityTypeID) REFERENCES EntityType_Cnfg (EntityTypeID)
+/
+
+
+--ALTER TABLE Blue_Ray_DVD ADD CONSTRAINT FK_EntityTypeID_BlueRay FOREIGN KEY (EntityTypeID) REFERENCES EntityType_Cnfg (EntityTypeID)
+/
+
+
+--ALTER TABLE Recently_Viewed ADD CONSTRAINT FK_EntityTypeID_RecentlyViewed FOREIGN KEY (EntityTypeID) REFERENCES EntityType_Cnfg (EntityTypeID)
+/
+
+
+--ALTER TABLE Images ADD CONSTRAINT FK_EntityTypeID_Images FOREIGN KEY (EntityTypeID) REFERENCES EntityType_Cnfg (EntityTypeID)
+/
+
+
+--ALTER TABLE Movie ADD CONSTRAINT FK_GenreID_Movie FOREIGN KEY (GenreID) REFERENCES Genre_Cnfg (GenreID)
+/
+
+
+--ALTER TABLE User_Review ADD CONSTRAINT FK_MovieID_Movie FOREIGN KEY (MovieID) REFERENCES Movie (MovieID)
+/
+
+
+--ALTER TABLE Movie_Celebrity ADD CONSTRAINT FK_MovieID_Movie_Celebrity FOREIGN KEY (MovieID) REFERENCES Movie (MovieID)
+/
+
+
+--ALTER TABLE Week_Gross ADD CONSTRAINT FK_MovieID_Movie_Week_Gross FOREIGN KEY (MovieID) REFERENCES Movie (MovieID)
+/
+
+
+--ALTER TABLE Theatre_Movie_Showtime ADD CONSTRAINT FK_Movie_TheatreMovieShowtime FOREIGN KEY (MovieID) REFERENCES Movie (MovieID)
+/
+
+
+--ALTER TABLE Movie ADD CONSTRAINT FK_MovieRatingID_Movie_Rating FOREIGN KEY (MovieRatingID) REFERENCES Movie_Rating (MovieRatingID)
+/
+
+
+--ALTER TABLE Soundtracks ADD CONSTRAINT FK_MusicDirector_Soundtracks FOREIGN KEY (MusicDirectorID) REFERENCES Celebrity (CelebrityID)
+/
+
+
+--ALTER TABLE Theatre ADD CONSTRAINT FK_PhoneID_Phone FOREIGN KEY (PhoneID) REFERENCES Phone (PhoneID)
+/
+
+
+--ALTER TABLE TV_Shows ADD CONSTRAINT FK_ProductionCompany_TV_Shows FOREIGN KEY (ProductionCompanyID) REFERENCES Production_Company (ProductionCompanyID)
+/
+
+
+--ALTER TABLE Movie ADD CONSTRAINT FK_ProductionCompany_Movie FOREIGN KEY (ProductionCompanyID) REFERENCES Production_Company (ProductionCompanyID)
+/
+
+
+--ALTER TABLE Season_Episodes ADD CONSTRAINT FK_Show_Season_Episodes FOREIGN KEY (ShowID) REFERENCES TV_Shows (ShowID)
+/
+
+
+--ALTER TABLE TVShow_Celebrity ADD CONSTRAINT FK_ShowID_TV_Shows) REFERENCES TV_Shows (ShowID)
+/
+
+
+--ALTER TABLE Channel_TV_Show_Time_Slot ADD CONSTRAINT FK_ShowID_TV_Shows FOREIGN KEY (ShowID) REFERENCES TV_Shows (ShowID)
+/
+
+
+--ALTER TABLE Theatre_Movie_Showtime ADD CONSTRAINT FK_ShowTimesID_Showtimes FOREIGN KEY (ShowtimesID) REFERENCES Showtimes (ShowtimesID)
+/
+
+
+--ALTER TABLE Showtimes ADD CONSTRAINT FK_ShowTypeID_Show_Cnfg FOREIGN KEY (ShowTypeID) REFERENCES Show_Cnfg (ShowTypeID)
+/
+
+
+--ALTER TABLE Soundtracks ADD CONSTRAINT FK_SingerID_Soundtracks FOREIGN KEY (SingerID) REFERENCES Celebrity (CelebrityID)
+/
+
+
+--ALTER TABLE Address ADD CONSTRAINT FK_StateID_State_Cnfg FOREIGN KEY (StateID) REFERENCES State_Cnfg (StateID)
+/
+
+
+--ALTER TABLE Theatre_Movie_Showtime ADD CONSTRAINT FK_TheatreID FOREIGN KEY (TheatreID) REFERENCES Theatre (TheatreID)
+/
+
+
+--ALTER TABLE Channel_TV_Show_Time_Slot ADD CONSTRAINT FK_TimeSlotID_Time_Slot FOREIGN KEY (TimeSlotID) REFERENCES TimeSlot (TimeSlotID)
+/
+
+
+
+--ALTER TABLE User_Review ADD CONSTRAINT FK_UserID_User FOREIGN KEY (UserID) REFERENCES User_Details (UserID)
+/
+
+
+--ALTER TABLE Videos ADD CONSTRAINT FK_VideoTypeID_Videos FOREIGN KEY (VideoTypeID) REFERENCES Video_Type (VideoTypeID)
+/
+
+
+
