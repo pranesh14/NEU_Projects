@@ -1,0 +1,4 @@
+snapshop/node_modules/
+snapshop_server/node_modules/
+snapshop/package-lock.json
+snapshop_server/package-lock.json

@@ -1,0 +1,35 @@
+<app-nav></app-nav>
+<div class="scanProduct">
+    <b>
+  <label class="quantity">Scan Product: </label>
+</b>
+</div>
+
+<br>
+
+<div class="product">
+
+    <form class="scanSearch" [formGroup]="scanProductForm">
+        <input type="text" placeholder="Search..." formControlName="search" />
+        <div class="searchDiv"> <button class="search" (click)="onSearch()">Search</button></div>
+    </form>
+    <form [formGroup]="searchResultForm" *ngIf="search1">
+        <label class="imageDiv"><img class="productImg" src="{{this.product.imageurl}}" formControlName="image"  ngDefaultControl></label>
+        <label class="prodName" formControlName="name" ngDefaultControl>{{this.product.name}}</label>
+        <label class="prodPrice" formControlName="price" ngDefaultControl>${{this.product.price}}</label>
+        <div class="qtyDiv"><b>Qty:</b> <label class="qty">
+            <select (change)="onSelectQty($event.target.value)">
+                <option selected> Select Qty </option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </label></div>
+        <button title="Add Product" class="special" (click)=onAddToCart()>Add to Cart</button>
+    </form>
+    <form *ngIf="noresult" [formGroup]="searchResultForm">
+        <label class="prodName">No Results Found! <br> Please Scan Again!</label>
+    </form>
+</div>

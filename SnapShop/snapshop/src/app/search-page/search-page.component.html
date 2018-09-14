@@ -1,0 +1,30 @@
+<app-nav></app-nav>
+<div class="searchText">
+    <input type="text" class="input" id="searchProduct" placeholder="Search Products..." autofocus>
+    <button title="Search Product" class="searchProd" (click)="onSearch()">Search</button>
+</div>
+
+<div class="sortDiv">
+    <button class="right" (click)="onSort()"><img src="../../assets/images/sort.png" class="sort-image"></button>
+    <label class="right">
+        <select id="sort">
+            <option selected>Name | A-Z</option>
+            <option>Name | Z-A</option>
+            <option>Price | High - Low</option>
+            <option>Price | Low - High</option>
+            <option>Rating | High - Low</option>
+            <option>Rating | Low - High</option>
+        </select>
+    </label>
+    <label class="right"><b>SORT</b></label>
+</div>
+
+<div class="product" *ngFor="let product of products">
+    <div class="imageDiv">
+        <!-- <img src={{url}} alt="Product Image" /> -->
+        <img src={{product.imageurl}} alt="Product Image" class="productImg">
+    </div>
+    <div class="prodName">{{product.name}}</div>
+    <div class="prodPrice">${{product.price}}</div>
+    <button title="View Product" [class.selected]="product === selectedItem" (click)="nav(product)" class="special">View Product Details</button>
+</div>

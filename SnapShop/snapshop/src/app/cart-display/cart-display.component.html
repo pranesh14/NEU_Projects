@@ -1,0 +1,10 @@
+<app-nav></app-nav>
+
+<div class="product" *ngFor="let cartItem of cartItems">
+    <div class="imageDiv"><img src="{{cartItem.image}}" class="productImg"></div>
+    <div class="prodName">{{cartItem.name}}</div>
+    <div class="prodPrice">${{cartItem.price}}</div>
+    <div class="prodPrice">Qty {{cartItem.quantity}}</div>
+    <button title="Remove" class="special" [class.selected]="cartItem === selectedCartItem" (click)="remove(cartItem)">Remove</button>
+</div>
+<button class="special" routerLink="/payment" routerLinkActive="active">Checkout</button>

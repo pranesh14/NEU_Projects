@@ -1,0 +1,20 @@
+/*Class Selectors*/
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+@for $i from 1 through 5 {
+    $paddingSize: 5 + $i * 2;
+    .padding-#{$paddingSize} {
+        padding: #{$paddingSize}px;
+    }
+}
+
+
+.body_class {
+    background-color: $workspace-color;
+}

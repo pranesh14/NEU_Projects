@@ -1,0 +1,92 @@
+<div class="login">
+        <div class="container">
+                <div class="login-container-wrapper clearfix">
+                    <ul class="switcher clearfix">
+                        <li class="first logo active" data-tab="login">					
+            
+    <a (click)="ifLogin()">Login</a>
+    </li>
+<li class="second logo" data-tab="sign_up">
+
+    <a (click)="ifRegister()">Sign up </a>
+</li>
+</ul>
+<div class="left">
+    <img src="http://www.snapcymru.org/wp-content/uploads/2014/02/SNAP-Shop-Logo-current.jpg" alt="Logo"/>
+</div>
+<div class="right"> 
+            <div class="tab-content">
+
+                    <div class="tab-pane active" id="login" *ngIf="login" >
+                        
+        <form class="form-horizontal login-form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+                <div class="validation" *ngIf="notExists"><label>Invalid Username/Password</label></div>
+                <br/>
+            
+            <div class="form-group relative">
+                    <input class="form-control input-lg" id="login_password" placeholder="User name" formControlName="username" required="" type="email"> <i class="fa fa-lock"></i>
+                </div>
+    
+                     <div class="form-group relative">
+                    <input class="form-control input-lg"  placeholder="Password" required=""formControlName="password" type="password"> <i class="fa fa-lock"></i>
+                </div>
+
+            <!-- <button>Login</button> -->
+
+            <!-- For Login -->
+            <div >
+                    <button class="btn btn-success btn-lg btn-block" type="submit">Login</button>
+                </div>
+                
+          </form>
+
+    </div>
+
+    <!-- For Sign up  -->
+    
+<div id="sign_up" *ngIf="!login" >
+
+     <form  class ="form-horizontal login-form" [formGroup]="regForm" (ngSubmit)="onSubmit2()">
+        
+            <div class="validation" *ngIf="notUnique"><label>User with this username already exists</label></div>
+            <br/>
+        
+        <div class="form-group relative">
+                <input  class="form-control input-lg" id="login_username" placeholder="First Name" type="text" formControlName="fname"  placeholder="First Name"required="">
+                <div *ngIf="(regForm.controls['fname'].hasError('required') || regForm.controls['fname'].hasError('pattern')) && regForm.controls['fname'].touched" class="alert alert-danger">Please enter your first name.</div>
+                </div>
+
+      <div class="form-group relative">
+            <input  class ="form-control input-lg" placeholder="  Last Name" type="text" formControlName="lname" required>
+            <div *ngIf="(regForm.controls['lname'].hasError('required') || regForm.controls['lname'].hasError('pattern')) && regForm.controls['lname'].touched" class="alert alert-danger">Please enter your last name.</div>
+            </div>         
+
+            <div class="form-group relative">
+            <input  class ="form-control input-lg"  placeholder=" User Name" type="text" formControlName="uname" required>
+            <div *ngIf="(regForm.controls['uname'].hasError('required') || regForm.controls['uname'].hasError('pattern')) && regForm.controls['uname'].touched" class="alert alert-danger">Username should have atleast 8 characters and 2 digits.</div>
+            </div>
+
+            <div class="form-group relative">
+            <input  class ="form-control input-lg"  placeholder="  Password" type="text" formControlName="pwd" required>
+            <div *ngIf="(regForm.controls['pwd'].hasError('required') || regForm.controls['pwd'].hasError('pattern')) && regForm.controls['pwd'].touched" class="alert alert-danger">Password should have atleast 3 digits, 1 upper case letter, 1 special character and atleast be of length 8.</div>
+            </div>
+            
+            <div class="form-group relative">
+            <input  class ="form-control input-lg" placeholder="  Email" type="text" formControlName="email" required>
+            <div *ngIf="(regForm.controls['email'].hasError('required') || regForm.controls['email'].hasError('pattern')) && regForm.controls['email'].touched" class="alert alert-danger">Please enter valid email address.</div>
+            </div>
+
+            <div class="form-group relative">
+            <input  class ="form-control input-lg"  placeholder="  Contact No." type="text" formControlName="phno" required>
+            <div *ngIf="(regForm.controls['phno'].hasError('required') || regForm.controls['phno'].hasError('pattern')) && regForm.controls['phno'].touched" class="alert alert-danger">Please enter a valid 10 digit phone number.</div>            
+            </div>
+
+        <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="!regForm.valid">Register</button>
+    </form>
+    </div>
+    </div>
+    </div>
+ </div>
+		</div>
+	</div>

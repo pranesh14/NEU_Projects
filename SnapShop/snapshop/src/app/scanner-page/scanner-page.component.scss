@@ -1,0 +1,613 @@
+//colors
+$color_celeste_approx: #ccc;
+$white: #fff;
+$color_desert_storm_approx: #f8f8f8;
+$color_suva_gray_approx: #888;
+$color_silver_chalice_approx: #aaa;
+$color_alto_approx: #ddd;
+$color_vermilion_approx: orangered;
+$gray : grey;
+$color_fuscous_gray_approx: #505050;
+$color_tapa_approx: #757575;
+$color_cinnabar_approx: #ed4933;
+$color_mountain_mist_25_approx: rgba(144, 144, 144, 0.25);
+$color_mountain_mist_50_approx: rgba(144, 144, 144, 0.5);
+$color_persimmon_approx: #ef5e4a;
+$color_pomegranate_approx: #eb341c;
+//fonts
+$font_0: Consolas;
+$font_1: monospace;
+app-nav {
+    position: sticky;
+    width: 100%;
+}
+
+select {
+    padding: 3px;
+    margin: 0;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 4px;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 3px 0 $color_celeste_approx, 0 -1px $white inset;
+    background: $color_desert_storm_approx;
+    color: $color_suva_gray_approx;
+    border: none;
+    outline: none;
+    display: inline-block;
+    appearance: none;
+    cursor: pointer;
+}
+
+@media screen and(-webkit-min-device-pixel-ratio:0) {
+    select {}
+}
+
+.scanProduct {
+    align-content: center;
+    margin: 10px;
+}
+
+.price {
+    font-size: 20px;
+}
+
+.quantity {
+    color: $color_vermilion_approx;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.product {
+    border: 1px solid $gray;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 5px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.imageDiv {
+    width: 30%;
+    padding: 10px;
+    display: inline-block;
+    // margin-top: 11px;
+    margin-left: 6%;
+    height: 26px;
+    position: absolute;
+}
+
+.productImg {
+    height: auto;
+    width: 44%;
+}
+
+.prodName {
+    color: $color_fuscous_gray_approx;
+    font-size: 25px;
+    font-weight: 900;
+    padding-top: 17px;
+    display: inline-block;
+    margin-left: 26%;
+    position: absolute;
+}
+
+.qtyDiv {
+    padding-left: 65%;
+    padding-top: 9%;
+}
+
+.scanSearch {
+    border: 1px solid $gray;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 5px;
+    height: 190px;
+    width: 30%;
+    padding: 0;
+    float: left;
+}
+
+.prodPrice {
+    color: $color_fuscous_gray_approx;
+    font-size: 22px;
+    font-weight: 900;
+    margin-left: 56%;
+    margin-top: 1.6%;
+    position: absolute;
+    display: inline-block;
+}
+
+.link {
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid $color_tapa_approx;
+    margin: 26px;
+}
+
+.search {
+    background-color: $color_cinnabar_approx;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none !important;
+    color: $white !important;
+    float: right;
+    margin: 6% 7% 0 23%;
+}
+
+.searchDiv {
+    width: 100%;
+}
+
+input[type="submit"] {
+    appearance: none;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: transparent;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 9px;
+    border: 0;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: inset 0 0 0 2px $white;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    height: 3.125em;
+    letter-spacing: 0.225em;
+    line-height: 3.125em;
+    padding: 0 2.75em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: right;
+    &:hover {
+        background-color: $color_mountain_mist_25_approx;
+    }
+    &:active {
+        background-color: $color_mountain_mist_50_approx;
+    }
+    &.fit {
+        display: block;
+        margin: 0 0 1em 0;
+        width: 100%;
+    }
+    &.small {
+        font-size: 0.8em;
+    }
+    &.big {
+        font-size: 1.35em;
+    }
+    &.special {
+        background-color: $color_cinnabar_approx;
+        //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+        box-shadow: none !important;
+        color: $white !important;
+        margin-top: -2%;
+        margin-right: 2%;
+        float: right;
+        &:hover {
+            background-color: $color_persimmon_approx !important;
+        }
+        &:active {
+            background-color: $color_pomegranate_approx !important;
+        }
+    }
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &.icon:before {
+        margin-right: 0.5em;
+    }
+}
+
+input[type="reset"] {
+    appearance: none;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: transparent;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 9px;
+    border: 0;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: inset 0 0 0 2px $white;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    height: 3.125em;
+    letter-spacing: 0.225em;
+    line-height: 3.125em;
+    padding: 0 2.75em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: right;
+    &:hover {
+        background-color: $color_mountain_mist_25_approx;
+    }
+    &:active {
+        background-color: $color_mountain_mist_50_approx;
+    }
+    &.fit {
+        display: block;
+        margin: 0 0 1em 0;
+        width: 100%;
+    }
+    &.small {
+        font-size: 0.8em;
+    }
+    &.big {
+        font-size: 1.35em;
+    }
+    &.special {
+        background-color: $color_cinnabar_approx;
+        //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+        box-shadow: none !important;
+        color: $white !important;
+        margin-top: -2%;
+        margin-right: 2%;
+        float: right;
+        &:hover {
+            background-color: $color_persimmon_approx !important;
+        }
+        &:active {
+            background-color: $color_pomegranate_approx !important;
+        }
+    }
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &.icon:before {
+        margin-right: 0.5em;
+    }
+}
+
+input[type="button"] {
+    appearance: none;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: transparent;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 9px;
+    border: 0;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: inset 0 0 0 2px $white;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    height: 3.125em;
+    letter-spacing: 0.225em;
+    line-height: 3.125em;
+    padding: 0 2.75em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: right;
+    &:hover {
+        background-color: $color_mountain_mist_25_approx;
+    }
+    &:active {
+        background-color: $color_mountain_mist_50_approx;
+    }
+    &.fit {
+        display: block;
+        margin: 0 0 1em 0;
+        width: 100%;
+    }
+    &.small {
+        font-size: 0.8em;
+    }
+    &.big {
+        font-size: 1.35em;
+    }
+    &.special {
+        background-color: $color_cinnabar_approx;
+        //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+        box-shadow: none !important;
+        color: $white !important;
+        margin-top: -2%;
+        margin-right: 2%;
+        float: right;
+        &:hover {
+            background-color: $color_persimmon_approx !important;
+        }
+        &:active {
+            background-color: $color_pomegranate_approx !important;
+        }
+    }
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &.icon:before {
+        margin-right: 0.5em;
+    }
+}
+
+button {
+    appearance: none;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: transparent;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 9px;
+    border: 0;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: inset 0 0 0 2px $white;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    height: 3.125em;
+    letter-spacing: 0.225em;
+    line-height: 3.125em;
+    padding: 0 2.75em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: right;
+    &:hover {
+        background-color: $color_mountain_mist_25_approx;
+    }
+    &:active {
+        background-color: $color_mountain_mist_50_approx;
+    }
+    &.fit {
+        display: block;
+        margin: 0 0 1em 0;
+        width: 100%;
+    }
+    &.small {
+        font-size: 0.8em;
+    }
+    &.big {
+        font-size: 1.35em;
+    }
+    &.special {
+        background-color: $color_cinnabar_approx;
+        //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+        box-shadow: none !important;
+        color: $white !important;
+        margin-top: -2%;
+        margin-right: 2%;
+        float: right;
+        &:hover {
+            background-color: $color_persimmon_approx !important;
+        }
+        &:active {
+            background-color: $color_pomegranate_approx !important;
+        }
+    }
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &.icon:before {
+        margin-right: 0.5em;
+    }
+}
+
+.button {
+    appearance: none;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: transparent;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 9px;
+    border: 0;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: inset 0 0 0 2px $white;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    height: 3.125em;
+    letter-spacing: 0.225em;
+    line-height: 3.125em;
+    padding: 0 2.75em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: right;
+    &:hover {
+        background-color: $color_mountain_mist_25_approx;
+    }
+    &:active {
+        background-color: $color_mountain_mist_50_approx;
+    }
+    &.fit {
+        display: block;
+        margin: 0 0 1em 0;
+        width: 100%;
+    }
+    &.small {
+        font-size: 0.8em;
+    }
+    &.big {
+        font-size: 1.35em;
+    }
+    &.special {
+        background-color: $color_cinnabar_approx;
+        //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+        box-shadow: none !important;
+        color: $white !important;
+        margin-top: -2%;
+        margin-right: 2%;
+        float: right;
+        &:hover {
+            background-color: $color_persimmon_approx !important;
+        }
+        &:active {
+            background-color: $color_pomegranate_approx !important;
+        }
+    }
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &.icon:before {
+        margin-right: 0.5em;
+    }
+}
+
+@media screen and(max-width: 736px) {
+    input[type="submit"] {
+        height: 3.75em;
+        line-height: 3.75em;
+        font-size: 8px;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 9px;
+        padding: 0 0.75em;
+        margin-top: 13%;
+        margin-right: 7%;
+    }
+    input[type="reset"] {
+        height: 3.75em;
+        line-height: 3.75em;
+        font-size: 8px;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 9px;
+        padding: 0 0.75em;
+        margin-top: 13%;
+        margin-right: 7%;
+    }
+    input[type="button"] {
+        height: 3.75em;
+        line-height: 3.75em;
+        font-size: 8px;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 9px;
+        padding: 0 0.75em;
+        margin-top: 13%;
+        margin-right: 7%;
+    }
+    button {
+        height: 3.75em;
+        line-height: 3.75em;
+        font-size: 8px;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 9px;
+        padding: 0 0.75em;
+        margin-top: 13%;
+        margin-right: 7%;
+        &.button.special {
+            margin-top: 13%;
+            margin-right: 7%;
+        }
+    }
+    .button {
+        height: 3.75em;
+        line-height: 3.75em;
+        font-size: 8px;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 9px;
+        padding: 0 0.75em;
+        margin-top: 13%;
+        margin-right: 7%;
+    }
+    input {
+        font-size: 8px;
+    }
+    .productImg {
+        height: auto;
+        width: 73%;
+    }
+    .prodName {
+        font-size: 16px;
+    }
+    .qtyDiv {
+        padding-top: 20%;
+        margin: 12px;
+    }
+    .prodPrice {
+        margin-top: 11.6%;
+        font-size: 12px;
+    }
+}
+
+@media screen and(max-width: 1070px) and(min-width: 736px) {
+    .prodPrice {
+        font-size: 17px;
+        margin-left: 60%;
+        margin-top: 2.6%;
+    }
+    .prodName {
+        font-size: 18px;
+    }
+}
+
+label.qty {
+    position: relative;
+    &:after {
+        content: '< >';
+        font: 11px $font_0, $font_1;
+        color: $color_silver_chalice_approx;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(90deg);
+        right: 8px;
+        top: 2px;
+        padding: 0 0 2px;
+        border-bottom: 1px solid $color_alto_approx;
+        position: absolute;
+        pointer-events: none;
+    }
+    &:before {
+        content: '';
+        right: 6px;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        background: $color_desert_storm_approx;
+        position: absolute;
+        pointer-events: none;
+        display: block;
+    }
+}

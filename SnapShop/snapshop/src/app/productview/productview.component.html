@@ -1,0 +1,52 @@
+<app-nav></app-nav>
+<div class="container">
+    <div>
+        <div class="details">
+            <div>
+                <img src={{url}} alt="Product Image" />
+            </div>
+            <br/><br/>
+            <div>
+                <span class="text-style">Product Name:</span>
+                <span class="text-style">{{name}}</span>
+            </div>
+            <div>
+                <span class="text-style">Description:</span>
+                <span class="text-style">{{description}}</span>
+            </div>
+            <div>
+                <span class="text-style">Price:</span>
+                <span class="text-style">{{price}}</span>
+            </div>
+            <div>
+                <span class="text-style">Inventory Count:</span>
+                <span class="text-style">{{inventorycount}}</span>
+            </div>
+            <div>
+                <span class="text-style">Rating:</span>
+                <span class="text-style">{{rating}}</span>
+            </div>
+        </div>
+        <br/>
+        <div class="qty-add">
+            <div class="qtyDiv">
+                <label class="qty">Quantity:
+                    <select (change)="onSelectQty($event.target.value)">
+                        <option selected> Select Qty </option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </label>
+            </div>
+            <div><a class="addtocartbtn" (click)="addtocart()">Add to Cart</a></div>
+        </div>
+    </div>
+    <br/><br/><br/>
+    <div class="btn">
+        <span><a class="backbtn"routerLink="/searchProduct" routerLinkActive="active">Back</a></span>
+    </div>
+    <br/>
+</div>

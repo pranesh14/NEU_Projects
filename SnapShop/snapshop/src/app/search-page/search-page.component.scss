@@ -1,0 +1,427 @@
+//colors
+$color_vermilion_approx: orangered;
+$gray : grey;
+$color_fuscous_gray_approx: #505050;
+$color_tapa_approx: #757575;
+$color_cinnabar_approx: #ed4933;
+$white: #ffffff;
+$color_silver_chalice_approx: #aaa;
+$color_mountain_mist_25_approx: rgba(144, 144, 144, 0.25);
+$color_mountain_mist_50_approx: rgba(144, 144, 144, 0.5);
+$color_flame_pea_approx: #e45a48;
+$color_tundora_approx: #444;
+$color_celeste_approx: #ccc;
+$color_desert_storm_approx: #f8f8f8;
+$color_suva_gray_approx: #888;
+//@extend-elements
+//original selectors
+//input[type="submit"], input[type="reset"], input[type="button"], button, .button
+%extend_1 {
+    appearance: none;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: transparent;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 3px;
+    border: 0;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: inset 0 0 0 2px $white;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    height: 3.125em;
+    letter-spacing: 0.225em;
+    line-height: 3.125em;
+    padding: 0 2.75em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: right;
+}
+
+//original selectors
+//input[type="submit"].fit, input[type="reset"].fit, input[type="button"].fit, button.fit, .button.fit
+%extend_2 {
+    display: block;
+    margin: 0 0 1em 0;
+    width: 100%;
+}
+
+//original selectors
+//input[type="submit"].special, input[type="reset"].special, input[type="button"].special, button.special, .button.special
+%extend_3 {
+    background-color: $color_flame_pea_approx;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none !important;
+    color: $white !important;
+    margin-top: 8%;
+    margin-right: 1%;
+    float: right;
+}
+
+app-nav {
+    position: sticky;
+    width: 100%;
+}
+
+.right {
+    float: right;
+    margin: 2px;
+    padding: 10px;
+    color: $color_vermilion_approx;
+    a {
+        text-decoration: none;
+        color: $color_vermilion_approx;
+    }
+}
+
+.sort-image {
+    height: 12px;
+    width: 15x;
+}
+
+.searchResults {
+    align-content: center;
+    margin: 10px;
+}
+
+.price {
+    font-size: 20px;
+}
+
+.quantity {
+    color: $color_vermilion_approx;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.product {
+    border-bottom: 1px solid $gray;
+    // border-radius: 5px;
+    padding: 10px;
+    overflow: hidden;
+    margin: 1% 10%;
+}
+
+.imageDiv {
+    float: left;
+    width: 30%;
+    padding: 10px;
+}
+
+.productImg {
+    height: 100px;
+    width: 100px;
+}
+
+.prodName {
+    color: $color_fuscous_gray_approx;
+    font-size: 25px;
+    font-weight: 900;
+    padding-top: 20px;
+    float: left;
+}
+
+.prodPrice {
+    float: right;
+    color: $color_fuscous_gray_approx;
+    font-size: 22px;
+    font-weight: 900;
+    padding: 20px 50px;
+}
+
+.input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: inline-block;
+    border: none;
+    width: 35%;
+    border-bottom: 1px solid $color_tapa_approx;
+    margin: 26px;
+    float: left;
+    margin-left: 20%;
+}
+
+.searchProd {
+    background-color: $color_cinnabar_approx;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none !important;
+    color: $white !important;
+    margin: 26px;
+    float: left;
+}
+
+.searchText {
+    display: block;
+    width: 100%;
+    align-content: center;
+    overflow: hidden;
+}
+
+.sortDiv {
+    margin-right: 2%;
+    padding: 0.5% 2%;
+    border-bottom: 1px solid $color_silver_chalice_approx;
+    overflow: hidden;
+}
+
+input[type="submit"] {
+    @extend %extend_1;
+    &:hover {
+        background-color: $color_mountain_mist_25_approx;
+    }
+    &:active {
+        background-color: $color_mountain_mist_50_approx;
+    }
+    &.fit {
+        @extend %extend_2;
+    }
+    &.small {
+        font-size: 0.8em;
+    }
+    &.big {
+        font-size: 1.35em;
+    }
+    &.special {
+        @extend %extend_3;
+        &:hover {
+            background-color: $color_flame_pea_approx !important;
+        }
+        &:active {
+            background-color: $color_flame_pea_approx !important;
+        }
+    }
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &.icon:before {
+        margin-right: 0.5em;
+    }
+}
+
+input[type="reset"] {
+    @extend %extend_1;
+    &:hover {
+        background-color: $color_mountain_mist_25_approx;
+    }
+    &:active {
+        background-color: $color_mountain_mist_50_approx;
+    }
+    &.fit {
+        @extend %extend_2;
+    }
+    &.small {
+        font-size: 0.8em;
+    }
+    &.big {
+        font-size: 1.35em;
+    }
+    &.special {
+        @extend %extend_3;
+        &:hover {
+            background-color: $color_flame_pea_approx !important;
+        }
+        &:active {
+            background-color: $color_flame_pea_approx !important;
+        }
+    }
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &.icon:before {
+        margin-right: 0.5em;
+    }
+}
+
+input[type="button"] {
+    @extend %extend_1;
+    &:hover {
+        background-color: $color_mountain_mist_25_approx;
+    }
+    &:active {
+        background-color: $color_mountain_mist_50_approx;
+    }
+    &.fit {
+        @extend %extend_2;
+    }
+    &.small {
+        font-size: 0.8em;
+    }
+    &.big {
+        font-size: 1.35em;
+    }
+    &.special {
+        @extend %extend_3;
+        &:hover {
+            background-color: $color_flame_pea_approx !important;
+        }
+        &:active {
+            background-color: $color_flame_pea_approx !important;
+        }
+    }
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &.icon:before {
+        margin-right: 0.5em;
+    }
+}
+
+button {
+    @extend %extend_1;
+    &:hover {
+        background-color: $color_mountain_mist_25_approx;
+    }
+    &:active {
+        background-color: $color_mountain_mist_50_approx;
+    }
+    &.fit {
+        @extend %extend_2;
+    }
+    &.small {
+        font-size: 0.8em;
+    }
+    &.big {
+        font-size: 1.35em;
+    }
+    &.special {
+        @extend %extend_3;
+        &:hover {
+            background-color: $color_flame_pea_approx !important;
+        }
+        &:active {
+            background-color: $color_flame_pea_approx !important;
+        }
+    }
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &.icon:before {
+        margin-right: 0.5em;
+    }
+}
+
+.button {
+    @extend %extend_1;
+    &:hover {
+        background-color: $color_mountain_mist_25_approx;
+    }
+    &:active {
+        background-color: $color_mountain_mist_50_approx;
+    }
+    &.fit {
+        @extend %extend_2;
+    }
+    &.small {
+        font-size: 0.8em;
+    }
+    &.big {
+        font-size: 1.35em;
+    }
+    &.special {
+        @extend %extend_3;
+        &:hover {
+            background-color: $color_flame_pea_approx !important;
+        }
+        &:active {
+            background-color: $color_flame_pea_approx !important;
+        }
+    }
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+    &.icon:before {
+        margin-right: 0.5em;
+    }
+}
+
+@media screen and(max-width: 736px) {
+    input[type="submit"] {
+        height: 2.75em;
+        line-height: 3.75em;
+    }
+    input[type="reset"] {
+        height: 2.75em;
+        line-height: 3.75em;
+    }
+    input[type="button"] {
+        height: 2.75em;
+        line-height: 3.75em;
+    }
+    button {
+        height: 2.75em;
+        line-height: 3.75em;
+    }
+    .button {
+        height: 2.75em;
+        line-height: 3.75em;
+    }
+}
+
+body {
+    background: $color_tundora_approx;
+    text-align: center;
+    padding: 50px 0;
+}
+
+html {
+    background: $color_tundora_approx;
+    text-align: center;
+    padding: 50px 0;
+}
+
+select {
+    padding: 3px;
+    margin: 0;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 4px;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 3px 0 $color_celeste_approx, 0 -1px $white inset;
+    background: $color_desert_storm_approx;
+    color: $color_suva_gray_approx;
+    border: none;
+    outline: none;
+    display: inline-block;
+    appearance: none;
+    cursor: pointer;
+}
+
+@media screen and(-webkit-min-device-pixel-ratio:0) {
+    select {
+        padding-right: 18px;
+    }
+}
+
+input {
+    font-size: 8px;
+}

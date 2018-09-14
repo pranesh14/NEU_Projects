@@ -1,0 +1,76 @@
+//colors
+$white: white;
+$color_cinnabar_approx: #ed4933;
+//fonts
+$font_0: Arial;
+$font_1: Helvetica;
+$font_2: sans-serif;
+$font_3: Roboto;
+.container {
+    font-family: $font_3;
+    width: 1050px;
+    margin: 30px auto 0;
+    display: block;
+    background: $white;
+    padding: 10px 50px 50px;
+    .qtyDiv {
+        padding-left: 15%;
+        padding-top: 9%;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+    .btn {
+        clear: both;
+        margin-top: 20px;
+    }
+    .backbtn {
+        float: left;
+        font-size: 1.5em;
+        height: 75%;
+        width: 90px;
+    }
+    .addtocartbtn {
+        font-size: 1.2em;
+        width: 160px;
+        margin-top: 30px;
+        margin-left: 118px;
+    }
+    app-nav {
+        position: sticky;
+        width: 100%;
+    }
+    .text-style {
+        font-family: $font_0, $font_1, $font_2;
+        font-size: 2em;
+    }
+    img {
+        height: 200px;
+        widows: 200px;
+    }
+    a {
+        border-radius: 5px;
+        color: $white;
+        padding: .5em;
+        text-decoration: none;
+        background-color: $color_cinnabar_approx;
+        box-shadow: none !important;
+        margin-right: 16px;
+        margin-top: 20px;
+    }
+    * {
+        box-sizing: border-box;
+    }
+    .details {
+        float: left;
+        width: 60%;
+        height: 450px;
+        padding-left: 180px;
+    }
+    .qty-add {
+        float: left;
+        width: 30%;
+        height: 450px;
+        padding-top: 70px;
+        padding-left: -10px;
+    }
+}

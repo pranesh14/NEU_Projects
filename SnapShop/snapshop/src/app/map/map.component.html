@@ -1,0 +1,31 @@
+<!-- The content below is only a placeholder and can be replaced. -->
+<div class="map">
+  <div style="color:white; text-align:center; overflow:hidden;">
+      <h2>Use us at the nearest store </h2>
+      <h2><p>Address : 1341 Boylston St, Boston, MA 02215
+      </p></h2>
+    </div>
+    <div class="map1">
+  <agm-map 
+[latitude]="lat" 
+[longitude]="lng"
+[zoom]=13
+[disableDefaultUI]=false
+[zoomControl]="true"
+>
+  <agm-marker
+    *ngFor = "let m of markers;let i =index"
+   (markerClick)="clickedMarker(m,i)"
+   [latitude]="m.lat" 
+   [longitude]="m.lng"
+   [markerDraggable]="m.draggable"
+   (dragEnd)="markerDragEnd(m,$event)"
+   >
+
+  <!-- <agm-window>
+    <strong>{{m.name}}</strong>
+  </agm-window> -->
+  </agm-marker>
+</agm-map>
+</div>
+</div>

@@ -1,0 +1,59 @@
+<app-nav></app-nav>
+<div class="container">
+    <div *ngIf="!paid">
+        <div>
+            <span class="text-style"> Order Total: </span>
+            <span class="text-style"> ${{amount}} </span>
+        </div>
+        <br/>
+        <br/>
+        <div class="panel panel-default credit-card-box">
+            <div class="panel-heading display-table">
+                <div class="row display-tr">
+                    <h3 class="panel-title display-td">Please enter your card details below</h3>
+                    <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                </div>
+            </div>
+        </div>
+        <br/><br/>
+        <form [formGroup]="paymentForm">
+            <div class="group">
+                <input type="number" formControlName="cardNumber" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Card Number</label>
+                <div *ngIf="(paymentForm.controls['cardNumber'].hasError('required') || paymentForm.controls['cardNumber'].hasError('pattern')) && paymentForm.controls['cardNumber'].touched" class="alert alert-danger">You must include a 16 digit card number.</div>
+            </div>
+            <div class="group">
+                <input type="number" formControlName="cvv" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>CVV</label>
+                <div *ngIf="(paymentForm.controls['cvv'].hasError('required') || paymentForm.controls['cvv'].hasError('pattern')) && paymentForm.controls['cvv'].touched" class="alert alert-danger">You must include a 3-digit or 6-digit CVV .</div>
+            </div>
+            <div class="group">
+                <input type="number" formControlName="mm" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Expiration Month</label>
+                <div *ngIf="(paymentForm.controls['mm'].hasError('required') || paymentForm.controls['mm'].hasError('min') || paymentForm.controls['mm'].hasError('max')) && paymentForm.controls['mm'].touched" class="alert alert-danger">You must insert month in MM format.</div>
+            </div>
+            <div class="group">
+                <input type="number" formControlName="yyyy" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Expiration Year</label>
+                <div *ngIf="(paymentForm.controls['yyyy'].hasError('required') || paymentForm.controls['yyyy'].hasError('min') || paymentForm.controls['yyyy'].hasError('max')) && paymentForm.controls['yyyy'].touched" class="alert alert-danger">You must insert year in YYYY format.</div>
+            </div>
+            <button (click)="onSubmit()" [disabled]="!paymentForm.valid">Make Payment</button>
+        </form>
+    </div>
+    <div *ngIf="paid">
+        <p class="text-style">
+            Order Completed!
+        </p>
+        <p class="text-style-1">
+            Payment done by Card ending with {{cnumber}}
+        </p>
+    </div>
+</div>
